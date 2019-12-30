@@ -24,27 +24,28 @@ UPDATED:
 
 A. 下載 twcc cli 
 
- git clone https://github.com/c00cjz00/TWCCCLI2.git
- cd TWCC-CLI/
- bash tools/twcc_env.sh
- pipenv install
- pipenv run python src/test/gpu_cntr.py
- 1. Enter your key @ twcc.ai
- 2. select your project
- 3. 建立開發型容器
+ 1. git clone https://github.com/c00cjz00/TWCCCLI2.git
+ 2. cd TWCCCLI2/
+ 3. bash tools/twcc_env.sh
+ 4. pipenv install
+ 5. pipenv run python src/test/gpu_cntr.py
+ 6. Enter your key @ twcc.ai
+ 7. select your project
+ 8. 建立開發型容器
  pipenv run python src/test/gpu_cntr.py create-cntr [-cntr Container name] [-gpu Number of GPU] [-sol Solution Name] [-img Image Name] [-wait T/True or F/False <Wait for CNTR to ready or not>]
- 5. 檢視所有映像檔類型
+ 9. 檢視所有映像檔類型
  pipenv run python src/test/gpu_cntr.py list-sol 
- 4. 檢視所有映像檔
+ 10. 檢視所有映像檔
  pipenv run python src/test/gpu_cntr.py list-all-img
- 5. 檢視容器資訊	
+ 11. 檢視容器資訊	
  pipenv run python src/test/gpu_cntr.py list-cntr -site 93072 -table False
  pipenv run python src/test/gpu_cntr.py list-cntr -all
- 6. 刪除容器
+ 12. 刪除容器
  pipenv run python src/test/gpu_cntr.py del-cntr 93072
 
 B. 自動連線
- 1. ssh-keygen
+ 1. cd ~/
+ 2. ssh-keygen
  2. create a container
  3. ssh-copy-id -i ~/.ssh/id_rsa.pub c00cjz00@203.145.219.140 -p 57031 
  4. ssh -p  57031 c00cjz00@203.145.219.140 
