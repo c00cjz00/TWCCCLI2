@@ -68,7 +68,8 @@ C. PHP code 連線
  8. 刪除容器
  php 04-delContainer.php 766468
  9. 總和指令
+ mkdir -p /home/ubuntu/git/TWCCCLI2/model/
  php demo.php mytorch 1 TensorFlow 'tensorflow-19.11-tf2-py3:latest' \
  'sudo -i pip install --upgrade pip; sleep 2; sudo -i pip install fastai; sleep 3; ipython ~/fastaiDemo/00-firstClass-TrainingSimple.ipynb;' \
  '/tmp/model01.pkl' \
- '/home/ubuntu/git/TWCC-CLI/php/model/'
+ '/home/ubuntu/git/TWCCCLI2/model/'
