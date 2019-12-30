@@ -23,50 +23,51 @@ UPDATED:
 
 
 A. 下載 twcc cli 
-git clone https://github.com/c00cjz00/TWCCCLI2.git
-cd TWCC-CLI/
-bash tools/twcc_env.sh
-pipenv install
-pipenv run python src/test/gpu_cntr.py
-1. Enter your key @ twcc.ai
-2. select your project
-3. 建立開發型容器
-pipenv run python src/test/gpu_cntr.py create-cntr [-cntr Container name] [-gpu Number of GPU] [-sol Solution Name] [-img Image Name] [-wait T/True or F/False <Wait for CNTR to ready or not>]
-5. 檢視所有映像檔類型
-pipenv run python src/test/gpu_cntr.py list-sol 
-4. 檢視所有映像檔
-pipenv run python src/test/gpu_cntr.py list-all-img
-5. 檢視容器資訊	
-pipenv run python src/test/gpu_cntr.py list-cntr -site 93072 -table False
-pipenv run python src/test/gpu_cntr.py list-cntr -all
-6. 刪除容器
-pipenv run python src/test/gpu_cntr.py del-cntr 93072
+
+ git clone https://github.com/c00cjz00/TWCCCLI2.git
+ cd TWCC-CLI/
+ bash tools/twcc_env.sh
+ pipenv install
+ pipenv run python src/test/gpu_cntr.py
+ 1. Enter your key @ twcc.ai
+ 2. select your project
+ 3. 建立開發型容器
+ pipenv run python src/test/gpu_cntr.py create-cntr [-cntr Container name] [-gpu Number of GPU] [-sol Solution Name] [-img Image Name] [-wait T/True or F/False <Wait for CNTR to ready or not>]
+ 5. 檢視所有映像檔類型
+ pipenv run python src/test/gpu_cntr.py list-sol 
+ 4. 檢視所有映像檔
+ pipenv run python src/test/gpu_cntr.py list-all-img
+ 5. 檢視容器資訊	
+ pipenv run python src/test/gpu_cntr.py list-cntr -site 93072 -table False
+ pipenv run python src/test/gpu_cntr.py list-cntr -all
+ 6. 刪除容器
+ pipenv run python src/test/gpu_cntr.py del-cntr 93072
 
 B. 自動連線
-1. ssh-keygen
-2. create a container
-3. ssh-copy-id -i ~/.ssh/id_rsa.pub c00cjz00@203.145.219.140 -p 57031 
-4. ssh -p  57031 c00cjz00@203.145.219.140 
+ 1. ssh-keygen
+ 2. create a container
+ 3. ssh-copy-id -i ~/.ssh/id_rsa.pub c00cjz00@203.145.219.140 -p 57031 
+ 4. ssh -p  57031 c00cjz00@203.145.219.140 
 
 C. PHP code 連線
-1. cd php
-2. 編輯configure file
-joe 00-containerFunc.php
-$twccCliBinPath="/home/ubuntu/git/TWCC-CLI";
-3. 建立容器
-php 01-createContainer.php mytensorflow 1 TensorFlow 'tensorflow-19.11-tf2-py3:latest'
-4. 列出啟動內容
-php 02-listContainer.php
-5. ssh 連線派送指令
-php 03-ssh2Container.php 766468 'pwd;date;ls;pwd;'
-6. 上傳檔案至container
- php 04-scpUploadToContainer.php 766594 '/home/c00cjz00/pythonCode' '/tmp/'
-7. 從container下載檔案
-php 05-scpDownloadFromContainer.php 767011 '/tmp/model01.pkl' '/home/ubuntu/git/TWCC-CLI/php/model'
-8. 刪除容器
-php 04-delContainer.php 766468
-9. 總和指令
-php demo.php mytorch 1 TensorFlow 'tensorflow-19.11-tf2-py3:latest' \
-'sudo -i pip install --upgrade pip; sleep 2; sudo -i pip install fastai; sleep 3; ipython ~/fastaiDemo/00-firstClass-TrainingSimple.ipynb;' \
-'/tmp/model01.pkl' \
-'/home/ubuntu/git/TWCC-CLI/php/model/'
+ 1. cd php
+ 2. 編輯configure file
+ joe 00-containerFunc.php
+ $twccCliBinPath="/home/ubuntu/git/TWCC-CLI";
+ 3. 建立容器
+ php 01-createContainer.php mytensorflow 1 TensorFlow 'tensorflow-19.11-tf2-py3:latest'
+ 4. 列出啟動內容
+ php 02-listContainer.php
+ 5. ssh 連線派送指令
+ php 03-ssh2Container.php 766468 'pwd;date;ls;pwd;'
+ 6. 上傳檔案至container
+  php 04-scpUploadToContainer.php 766594 '/home/c00cjz00/pythonCode' '/tmp/'
+ 7. 從container下載檔案
+ php 05-scpDownloadFromContainer.php 767011 '/tmp/model01.pkl' '/home/ubuntu/git/TWCC-CLI/php/model'
+ 8. 刪除容器
+ php 04-delContainer.php 766468
+ 9. 總和指令
+ php demo.php mytorch 1 TensorFlow 'tensorflow-19.11-tf2-py3:latest' \
+ 'sudo -i pip install --upgrade pip; sleep 2; sudo -i pip install fastai; sleep 3; ipython ~/fastaiDemo/00-firstClass-TrainingSimple.ipynb;' \
+ '/tmp/model01.pkl' \
+ '/home/ubuntu/git/TWCC-CLI/php/model/'
